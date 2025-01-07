@@ -17,8 +17,8 @@ jobs:
         run: npm ci
       - name: Test
         run: npm test
-  check-Python-ersion:
-    name: Unit Test
+  check-Python-version:
+    name: Version Check
     runs-on: ubuntu-latest
     steps:
       - name: Chekout # ワークフローをトリガーしたリポジトリとブランチのみをクローンする
