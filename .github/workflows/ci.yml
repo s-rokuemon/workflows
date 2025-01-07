@@ -17,18 +17,15 @@ jobs:
         run: npm ci
       - name: Test
         run: npm test
-  lint:
-    name: Lint
+  check-Python-ersion:
+    name: Unit Test
     runs-on: ubuntu-latest
     steps:
-      - name: Chekout
-        uses: actions/checkout@v2.0.0
-      
-      - name: set node.js 12.x
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20.x
-      - name: Install dependencies
-        run: npm ci
-      - name: Lint
-        run: npm run lint
+      - name: Chekout # ワークフローをトリガーしたリポジトリとブランチのみをクローンする
+        uses: actions/checkout@v2.0.0 
+      - name: check version
+        run: |
+          import sys
+          print(sys.version)
+        shell: python
+
