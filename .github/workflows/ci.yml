@@ -6,8 +6,8 @@ jobs:
     name: Unit Test
     runs-on: ubuntu-latest
     steps:
-      - name: Chekout
-        uses: actions/checkout@v2.0.0
+      - name: Chekout # ワークフローをトリガーしたリポジトリとブランチのみをクローンする
+        uses: actions/checkout@v2.0.0 
       
       - name: set node.js 12.x
         uses: actions/setup-node@v4
