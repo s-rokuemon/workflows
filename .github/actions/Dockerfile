@@ -1,6 +1,6 @@
 FROM debian:10.2
 
-COPY LICENSE README.md /
+COPY README.md /
 
 COPY entrypoint.sh /entrypoint.sh
 
