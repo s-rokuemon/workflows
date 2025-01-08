@@ -17,4 +17,4 @@ jobs:
         with:
           text: hello, world!
       - name: print converted text
-        run: echo "${{ steps.uppercase.outputs.uppwercase-text}}"
+        run: echo "${{ steps.uppercase.outputs.uppercase-text}}"
