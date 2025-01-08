@@ -1,4 +1,16 @@
-name: "hello world"
+name: "Uppercase"
+
+inputs:
+  text:
+    description: "text to be convert to Uppercase"
+    required: true
+
+outputs:
+  uppercase-text:
+    description: "text to be convert to Uppercase"
+
 runs:
-  using: "node12"
-  main: "index.js"
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - ${{ inputs.txt }}

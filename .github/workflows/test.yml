@@ -1,12 +1,20 @@
 name: Test
-on: push
+on: 
+  pull_request:
+  push:
+    branches:
+      - master
+      - 'release/*'
 
 jobs:
   test:
     runs-on: ubuntu-latest
     name: Test
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2.0.0
-      - name: verify hello action works
+      - uses: actions/checkout@v2.0.0
+      - id: uppercase
         uses: ./.github/actions/
+        with:
+          text: hello, world!
+      - name: print converted text
+        run: echo "${{ steps.uppercase.outputs.uppwercase-text}}"
